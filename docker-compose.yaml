@@ -1,0 +1,15 @@
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    # external: true
+
+services:
+  mongodb:
+    image: vidya07422/mongodb
+    container_name: mongodb
+  catalogue:
+    image: vidya07422/catalogue
+    container_name: catalogue
+    depends_on:
+    - mongodb
