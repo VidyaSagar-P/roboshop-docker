@@ -32,7 +32,7 @@ services:
     environment:
       REDIS_HOST: redis
       CATALOGUE_HOST: catalogue
-      CATALOGUE_PORT: "8080"
+      CATALOGUE_PORT: 8080
     depends_on:
     - redis
     - catalogue
@@ -61,9 +61,9 @@ services:
     container_name: payment
     environment: 
       CART_HOST: cart
-      CART_PORT: "8080"
+      CART_PORT: 8080
       USER_HOST: user
-      USER_PORT: "8080"
+      USER_PORT: 8080
       AMQP_HOST: rabbitmq
       AMQP_USER: roboshop
       AMQP_PASS: roboshop123
