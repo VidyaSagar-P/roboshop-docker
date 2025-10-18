@@ -26,3 +26,15 @@ services:
     depends_on:
     - redis
     - mongodb
+  cart: 
+    image: vidya07422/cart:v1
+    container_name: cart
+    environment:
+      REDIS_HOST: redis
+      CATALOGUE_HOST: catalogue
+      CATALOGUE_PORT: "8080"
+    depends_on:
+    - redis
+    - catalogue
+
+
