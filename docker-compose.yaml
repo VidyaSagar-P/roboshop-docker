@@ -23,6 +23,6 @@ services:
     - MONGO=true
     - REDIS_URL=redis://redis:6379
     - MONGO_URL=mongodb://mongodb:27017/users
-    depend_on:
+    depends_on:
     - redis
     - mongodb
