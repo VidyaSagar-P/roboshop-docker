@@ -8,8 +8,6 @@ volumes:
   redis:
   mysql:
   rabbitmq:
-
-
 services:
   mongodb:
     image: vidya07422/mongodb:v1
@@ -25,7 +23,7 @@ services:
     image: redis:7
     container_name: redis
     volumes:
-    - mongodb:/data
+    - redis:/data
   user:
     image: vidya07422/user:v1
     container_name: user
@@ -52,7 +50,7 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: RoboShop@1
     volumes:
-    - mongodb:/var/lib/mysql
+    - mysql:/var/lib/mysql
   shipping:
     image: vidya07422/shipping:v1
     container_name: shipping
@@ -69,7 +67,7 @@ services:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
     volumes:
-    - mongodb:/var/lib/rabbitmq
+    - rabbitmq:/var/lib/rabbitmq
   payment: 
     image: vidya07422/payment:v1
     container_name: payment
